@@ -238,6 +238,21 @@
   (auto-complete-mode -1))
 (add-hook 'python-mode-hook 'pkg-disable-multi-auto-complete)
 
+
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;      Autosave files and backup files Setup
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
+; create the autosave dir if necessary, since emacs won't.
+(make-directory "~/.emacs.d/autosaves/" t)
+(make-directory "~/.emacs.d/backups/" t)
+; put files
+(custom-set-variables
+  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/" t)))
+  '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
+
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
