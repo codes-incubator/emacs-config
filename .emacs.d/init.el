@@ -22,6 +22,15 @@
 (setq use-package-always-ensure t)
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;      setup tool-bar, menu-bar, scroll-bar mode
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode 0)
+(toggle-scroll-bar -1)
+
+
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;      setup X-windows sys-clipboard
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (setq x-select-enable-clipboard t)
