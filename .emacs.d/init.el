@@ -29,9 +29,28 @@
 (scroll-bar-mode 0)
 (toggle-scroll-bar -1)
 
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;      setup Emacs windows move 
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(windmove-default-keybindings)
+(setq windmove-wrap-around t)
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;;      setup X-windows sys-clipboard
+;;      setup Emacs windows rotate (ace-window)
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(global-set-key (kbd "M-p") 'ace-window)
+
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;      setup Emacs buffer rotate (buffer-move)
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;; (global-set-key (kbd "<C-S-up>")     'buf-move-up)
+;; (global-set-key (kbd "<C-S-down>")   'buf-move-down)
+;; (global-set-key (kbd "<C-S-left>")   'buf-move-left)
+;; (global-set-key (kbd "<C-S-right>")  'buf-move-right)
+;; (setq buffer-move-behavior 'move)
+
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;      setup X-window sys-clipboard
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (setq x-select-enable-clipboard t)
 (setq gui-select-enable-clipboard t)
@@ -49,11 +68,9 @@
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (global-set-key (kbd "C-\\") 'comment-line)
 
-;; it will use defualt key mapping Shift + up/down/left/right to switch windows
-(windmove-default-keybindings)
-(setq windmove-wrap-around t)
-
-
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;      Git setup
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (use-package magit
   :config
   (progn
@@ -228,7 +245,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (neotree company-anaconda anaconda-mode yapfify cython-mode elpy pyvenv markdown-mode yaml-mode use-package magit go-playground go-guru go-eldoc go-dlv go-autocomplete git-gutter+ flycheck-gometalinter company-go))))
+    (ace-window buffer-move neotree company-anaconda anaconda-mode yapfify cython-mode elpy pyvenv markdown-mode yaml-mode use-package magit go-playground go-guru go-eldoc go-dlv go-autocomplete git-gutter+ flycheck-gometalinter company-go))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
