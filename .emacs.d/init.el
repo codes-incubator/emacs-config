@@ -22,6 +22,12 @@
 (setq use-package-always-ensure t)
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;      setup linenumber
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(setq global-linum-mode t)
+(global-linum-mode t)
+
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;      setup tool-bar, menu-bar, scroll-bar mode
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (menu-bar-mode -1)
@@ -248,19 +254,19 @@
 (make-directory "~/.emacs.d/backups/" t)
 ; put files
 (custom-set-variables
-  '(auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/" t)))
-  '(backup-directory-alist '((".*" . "~/.emacs.d/backups/"))))
-
-
-
-(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(auto-save-file-name-transforms (quote ((".*" "~/.emacs.d/autosaves/" t))))
+ '(backup-directory-alist (quote ((".*" . "~/.emacs.d/backups/"))))
  '(package-selected-packages
    (quote
-    (ace-window buffer-move neotree company-anaconda anaconda-mode yapfify cython-mode elpy pyvenv markdown-mode yaml-mode use-package magit go-playground go-guru go-eldoc go-dlv go-autocomplete git-gutter+ flycheck-gometalinter company-go))))
+    (go-gen-test ace-window buffer-move neotree company-anaconda anaconda-mode yapfify cython-mode elpy pyvenv markdown-mode yaml-mode use-package magit go-playground go-guru go-eldoc go-dlv go-autocomplete git-gutter+ flycheck-gometalinter company-go))))
+
+
+
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
