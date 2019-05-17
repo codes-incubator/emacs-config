@@ -196,7 +196,7 @@
   :init (setq markdown-command "multimarkdown"))
 
 (require 'yaml-mode)
-   (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;      Python IDE Setup
@@ -246,13 +246,31 @@
 
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+;;      setup hippie-expand
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+(global-set-key (kbd "M-/") 'hippie-expand)
+(setq hippie-expand-try-functions-list
+      '(try-expand-dabbrev                 ; 搜索当前 buffer
+        try-expand-dabbrev-visible         ; 搜索当前可见窗口
+        try-expand-dabbrev-all-buffers     ; 搜索所有 buffer
+        try-expand-dabbrev-from-kill       ; 从 kill-ring 中搜索
+        try-complete-file-name-partially   ; 文件名部分匹配
+        try-complete-file-name             ; 文件名匹配
+        try-expand-all-abbrevs             ; 匹配所有缩写词
+        try-expand-list                    ; 补全一个列表
+        try-expand-line                    ; 补全当前行
+        try-complete-lisp-symbol-partially ; 部分补全 elisp symbol
+        try-complete-lisp-symbol))         ; 补全 lisp symbol
+
+
+;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;;      Autosave files and backup files Setup
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; Put autosave files (ie #foo#) and backup files (ie foo~) in ~/.emacs.d/.
-; create the autosave dir if necessary, since emacs won't.
+					; create the autosave dir if necessary, since emacs won't.
 (make-directory "~/.emacs.d/autosaves/" t)
 (make-directory "~/.emacs.d/backups/" t)
-; put files
+					; put files
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
